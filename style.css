@@ -89,9 +89,9 @@ nav ul li a:hover{
 }
           /*home section*/
 .page1{
-    width:auto;
+    width:100%;
     height:auto;
-    background-repeat: no-repeat;
+    background-repeat:;
     background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.5)),url('images/backimg.jpg');
 }
 .page1 h1{
@@ -100,7 +100,7 @@ nav ul li a:hover{
     text-align: center;
     font-weight: 800;
     font-size: 25px;
-	color:lawngreen;
+	color:floralwhite;
 }
 .page1 h3{   
     font-family: italic;

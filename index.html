@@ -41,7 +41,7 @@
 	<div class="container-a">
 <div class="bar" id="items">
 	<label>
-		<input type="text" name=""placeholder="Search Here For Fruits"id="search-box">
+		<input type="text" name=""placeholder="Search Here For Fruits"id="search-box" onkeyup=" search()">
 		</label>
 	</div>
 		</section>
@@ -102,8 +102,26 @@
 	   		<h3>Prunus domestica</h3>
 	   	</div>
 	   	<div class="img" data-title="">
-	   		<img src="images/" alt="">
-	   		<h4></h4>
+	   		<img src="images/raspberry.jpg" alt="">
+	   		<h1>Respberry</h1>
+	   		<h3>Rubus idaeus</h3>
+	 
+	   	</div> 	
+	   	 <div class="img" data-title="">
+	   		<img src="images/mulberry.jpg" alt="">
+	   		<h1>Mulberry</h1>
+	   		<h3>Morus alba</h3>
+	   	
+	   	</div> 	<div class="img" data-title="">
+	   		<img src="images/blueberries.jpg" alt="">
+	   		<h1>Blueberry</h1>
+	   		<h3>vaccinium sect.Cyanococcus</h3>
+
+	   	</div> 	<div class="img" data-title="">
+	   		<img src="images/berries.jpg" alt="">
+	   		<h1>Berry</h1>
+	   		<h3>pericarpium</h3>
+	   	
 	   	</div>
 	   	<div class="img" data-title="dragonfruit">
 	   		<img src="images/dragonfruit.jpg"alt="">
@@ -229,22 +247,43 @@
 
 	   	      
 	   	<script>
-     let serachBox = document.querySelector('#search-box');
-		let images= document.querySelectorAll('.container-a .img-container .img');
+  //    let serachBox = document.querySelector('#search-box');
+		// let images= document.querySelectorAll('.container-a .img-container .img');
 
-		  serachBox.oninput = () =>{
-		  	images.forEach(hide => hide.style.display = 'none');
-		  	let value = serachBox.value;
-		  	images.forEach(filter =>{
-		  		let title = filter.getAttribute('data-title');
-		  		if(value == title){
-		  			filter.style.display = 'block';
-		  		}
-		  		if(serachBox.value == ''){
-		  			filter.style.display = 'block';
-		  			}
-		  	});
-		  };
+		//   serachBox.oninput = () =>{
+		//   	images.forEach(hide => hide.style.display = 'none');
+		//   	let value = serachBox.value;
+		//   	images.forEach(filter =>{
+		//   		let title = filter.getAttribute('data-title');
+		//   		if(value == title){
+		//   			filter.style.display = 'block';
+		//   		}
+		//   		if(serachBox.value == ''){
+		//   			filter.style.display = 'block';
+		//   			}
+		//   	});
+		//   };
+		const  search = () => {
+		 let searchbox = document.getElementById("search-box").value.toUpperCase();
+		const storeitems = document.getElementById("#img");
+		const product = document.querySelectorAll(".img")
+		const pname = document.getElementsByTagName("h1");
+
+			for (var i=0; i <product.length; i++) {
+				let match = product[i].getElementsByTagName('h1')[0];
+				if(match){
+
+					let textvalue = match.textContent || match.innerHTML ;
+
+					if (textvalue.toUpperCase().indexOf(searchbox) > -1){
+						product[i].style.display ="";
+					}
+					else {
+						product[i].style.display ="none";
+					}
+					}
+				}
+				}	
 	</script>
 
 
